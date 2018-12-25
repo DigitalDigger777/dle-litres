@@ -1,0 +1,187 @@
+{
+  "files": {
+    "file": [{
+      "@attributes": {
+        "size": "36439",
+        "type": "fb2.zip"
+      }
+    }, {
+      "@attributes": {
+        "size": "34490",
+        "type": "html.zip"
+      }
+    }, {
+      "@attributes": {
+        "size": "5231",
+        "type": "txt"
+      }
+    }, {
+      "@attributes": {
+        "size": "2867",
+        "type": "txt.zip"
+      }
+    }, {
+      "@attributes": {
+        "size": "40063",
+        "type": "rtf.zip"
+      }
+    }, {
+      "@attributes": {
+        "size": "111941",
+        "type": "a4.pdf"
+      }
+    }, {
+      "@attributes": {
+        "size": "102577",
+        "type": "a6.pdf"
+      }
+    }, {
+      "@attributes": {
+        "size": "48001",
+        "type": "mobi.prc"
+      }
+    }, {
+      "@attributes": {
+        "size": "382406",
+        "type": "epub"
+      }
+    }]
+  },
+  "genres": {
+    "genre": {
+      "@attributes": {
+        "id": "5210",
+        "bisac": "FIC000000",
+        "title": "современная русская литература",
+        "master": "1"
+      }
+    }
+  },
+  "authors": {
+    "author": {
+      "lvl": "3",
+      "url": "grigoriy-gorin/",
+      "relation": "0",
+      "last-name": "Горин",
+      "first-name": "Григорий",
+      "subject_id": "54580",
+      "@attributes": {
+        "id": "71dafda9-2a93-102a-9ac3-800cba805322"
+      },
+      "middle-name": "Израилевич",
+      "full-name-rodit": "Григория Горина"
+    }
+  },
+  "sequences": {
+    "sequence": {
+      "@attributes": {
+        "name": "Монологи",
+        "uuid": "61a3fcf8-5b5b-11e4-96e2-0025905a06ea"
+      }
+    }
+  },
+  "book-title": {
+    "@attributes": {
+      "title": "Фантомасы"
+    }
+  },
+  "copyrights": {
+    "copyright": {
+      "@attributes": {
+        "id": "47335",
+        "title": "ФТМ",
+        "percent": "100.00"
+      }
+    }
+  },
+  "title-info": {
+    "lang": "ru",
+    "genre": "russian_contemporary",
+    "author": {
+      "id": "71dafda9-2a93-102a-9ac3-800cba805322",
+      "last-name": "Горин",
+      "first-name": "Григорий",
+      "middle-name": "Израилевич"
+    },
+    "sequence": {
+      "@attributes": {
+        "name": "Монологи"
+      }
+    },
+    "coverpage": {
+      "image": {
+        "@attributes": {
+          "href": "#cover.png"
+        }
+      }
+    },
+    "book-title": "Фантомасы"
+  },
+  "@attributes": {
+    "id": "155130",
+    "drm": "0",
+    "lvl": "3",
+    "url": "",
+    "isbn": "",
+    "lang": "ru",
+    "size": "36431",
+    "type": "0",
+    "adult": "0",
+    "chars": "5088",
+    "cover": "png",
+    "lang3": "rus",
+    "litex": "0",
+    "price": "5.99",
+    "images": "1",
+    "status": "in_progress",
+    "cover_h": "318",
+    "cover_w": "204",
+    "created": "2007-07-18 14:57:09",
+    "file_id": "51230",
+    "options": "64",
+    "updated": "2013-01-14 16:52:17",
+    "src_lang": "0",
+    "available": "0",
+    "has_trial": "0",
+    "publisher": "«ДОВИРА»",
+    "sell_open": "0",
+    "show_card": "64",
+    "allow_read": "0",
+    "allow_sell": "0",
+    "file_parts": "1",
+    "sent_by_id": "20",
+    "subject_id": "54580",
+    "valid_from": "2012-02-03",
+    "valid_till": "2019-10-01",
+    "external_id": "7bdd186d-8662-102a-94d5-07de47c81719",
+    "must_import": "0",
+    "can_preorder": "0",
+    "last_release": "2007-07-18 14:57:09",
+    "sent_by_name": "busya",
+    "you_can_sell": "0",
+    "contract_ends": "2019-10-01",
+    "public_domain": "0",
+    "contract_title": "ФТМ",
+    "date_written_s": "",
+    "allow_full_free": "0",
+    "contract_author": "47335",
+    "copyright_read_online": "1"
+  },
+  "publish-info": {
+    "city": "Киев",
+    "year": "1995",
+    "book-name": "Григорий Горин «Дом, который построил Свифт», серия «Смех – Не Грех»",
+    "publisher": "«ДОВИРА»"
+  },
+  "document-info": {
+    "id": "7bdd186d-8662-102a-94d5-07de47c81719",
+    "date": "20.07.2007",
+    "author": {
+      "nickname": "Busya"
+    },
+    "src-ocr": "OCR Busya",
+    "src-url": ["http://www.litres.ru/pages/biblio_book/?art=155130", "http:\\\\www.lib.aldearan.ru"],
+    "version": "1.0",
+    "program-used": "Book Designer 5.0, Fiction Book Designer, FB Writer v1.1"
+  }
+}

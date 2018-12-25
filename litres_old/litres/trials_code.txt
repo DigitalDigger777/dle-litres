@@ -1,0 +1,9 @@
+<div style="text-align:center;margin:5px 0 0 0;float:none;clear:both">
+				Скачать фрагмент книги:
+				<div style="font-weight:bold;word-spacing:16px">
+					<a rel="nofollow" href="http://www.litres.ru/gettrial/?art=[xfvalue_litres_hub_id]&format=fb2&lfrom=159531232">fb2</a>&nbsp;&nbsp;
+					<a rel="nofollow" href="http://www.litres.ru/gettrial/?art=[xfvalue_litres_hub_id]&format=txt&lfrom=159531232">txt</a>&nbsp;&nbsp;
+					<a rel="nofollow" href="http://www.litres.ru/gettrial/?art=[xfvalue_litres_hub_id]&format=rtf&lfrom=159531232">rtf</a>&nbsp;&nbsp;
+					<a rel="nofollow" href="http://www.litres.ru/gettrial/?art=[xfvalue_litres_hub_id]&format=epub&lfrom=159531232">epub</a>
+                </div>
+			</div>

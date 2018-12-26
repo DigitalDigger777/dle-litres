@@ -154,7 +154,7 @@ class LitresImportCommand extends Command
         $this->em->persist($litresProcess);
         $this->em->flush();
 
-        $log = new Log();
+        //$log = new Log();
 
         foreach ($xml->{'updated-book'} as $book)
         {
@@ -168,10 +168,10 @@ class LitresImportCommand extends Command
                 $litresJsonData->setLocalId(0);
                 $litresJsonData->setNeedLocalUpdate(false);
 
-                $log->write('Added new book id ' . $book->attributes()->id->__toString());
+                //$log->write('Added new book id ' . $book->attributes()->id->__toString());
             } else {
                 $litresJsonData->setNeedLocalUpdate(true);
-                $log->write('update book id ' . $book->attributes()->id->__toString());
+                //$log->write('update book id ' . $book->attributes()->id->__toString());
             }
 
             $litresJsonData->setUpdated(new \DateTime($book->attributes()->updated->__toString()));

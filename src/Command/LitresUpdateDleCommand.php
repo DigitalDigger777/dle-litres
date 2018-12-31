@@ -129,6 +129,12 @@ class LitresUpdateDleCommand extends Command
             } else {
                 $local_id = $book->getLocalId();
                 $dlePost = $this->em->getRepository(DlePost::class)->find($local_id);
+
+                if (!$dlePost) {
+                    $dlePost = new DlePost();
+                    $dlePost->setDate(new \DateTime());
+                    $log->write('Create new dle post');
+                }
                 $book->setNeedLocalUpdate(false);
                 $this->em->persist($book);
                 $log->write('Update dle post id: ' . $local_id);

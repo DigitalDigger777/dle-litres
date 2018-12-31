@@ -84,6 +84,8 @@ class LitresUpdateDleCommand extends Command
             $local_categories = 99;
 
             $book_title = $data['book-title']['@attributes']['title'];
+            print_r($book_title);
+            exit;
             $title = stripslashes(trim($mainAuthor['first-name'] . ' ' . $mainAuthor['last-name']) . ' - ' . $book_title);
 
             $alt_name = $this->totranslit(mb_convert_encoding(stripslashes($book_title),'windows-1251','UTF-8'), true, false );

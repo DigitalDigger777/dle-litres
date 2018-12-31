@@ -99,7 +99,7 @@ class LitresUpdateDleCommand extends Command
 			<b>Название:</b> ' . trim($book_title) . '<br />
 			<b>Автор:</b> ' . trim($firstName . ' ' . $lastName) . '<br />
 			' . ($data['@attributes']['publisher'] != '' ? '<b>Издательство:</b> ' . $data['@attributes']['publisher'] . '<br />' : '') . '
-			' . (isset($data['publish-info']) && $data['publish-info']['year'] > 0 ? '<b>Год:</b> ' . $data['publish-info']['year'] . '<br />' : '') . '
+			' . (isset($data['publish-info']) && isset($data['publish-info']['year']) && $data['publish-info']['year'] > 0 ? '<b>Год:</b> ' . $data['publish-info']['year'] . '<br />' : '') . '
 			<b>Формат:</b> RTF/FB2<br />
 			<b>Язык:</b> Русский
 			</div><br /><br />';

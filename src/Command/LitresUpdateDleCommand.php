@@ -242,13 +242,18 @@ class LitresUpdateDleCommand extends Command
         }
 
         if ($data['@attributes']['cover'] != '') {
-            $cover_path = 'http://www.litres.ru/static/bookimages/' . $cover_id[0] . $cover_id[1] . '/' . $cover_id[2] . $cover_id[3] . '/' . $cover_id[4] . $cover_id[5] . '/' . $cover_id . '.bin.dir/' . $cover_id . '.cover.' . $data['@attributes']['cover'];
 
-            $new_image = new Picture($cover_path);
-            $new_image->imageresizewidth(240);
+            try {
+                $cover_path = 'http://www.litres.ru/static/bookimages/' . $cover_id[0] . $cover_id[1] . '/' . $cover_id[2] . $cover_id[3] . '/' . $cover_id[4] . $cover_id[5] . '/' . $cover_id . '.bin.dir/' . $cover_id . '.cover.' . $data['@attributes']['cover'];
 
-            $new_image->imagesave($new_image->image_type, getenv('ROOT_DIR') . '/uploads/posts/' . $dir_name . '/' . $pic_name, 85);
-            $new_image->imageout();
+                $new_image = new Picture($cover_path);
+                $new_image->imageresizewidth(240);
+
+                $new_image->imagesave($new_image->image_type, getenv('ROOT_DIR') . '/uploads/posts/' . $dir_name . '/' . $pic_name, 85);
+                $new_image->imageout();
+            } catch (\Exception $e) {
+                print $e->getMessage() . "\n";
+            }
         }
 
     }

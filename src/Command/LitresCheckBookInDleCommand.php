@@ -96,14 +96,18 @@ class LitresCheckBookInDleCommand extends Command
                 $xfieldsData = $post->getXfields();
                 $xfields = $this->explode_xfields($xfieldsData);
 
-                $litresData = $this->em->getRepository(LitresJsonData::class)->findOneBy(['hub_id' => $xfields['hub_id']]);
+                if (isset($xfields['hub_id'])) {
+                    $litresData = $this->em->getRepository(LitresJsonData::class)->findOneBy(['hub_id' => $xfields['hub_id']]);
 
-                if ($litresData) {
-                    $localId = $post->getId();
-                    $litresData->setLocalId($localId);
-                    $this->em->persist($litresData);
+                    if ($litresData) {
+                        $localId = $post->getId();
+                        $litresData->setLocalId($localId);
+                        $this->em->persist($litresData);
 
-                    echo "update local id for hub_id " . $xfields['hub_id'] . "\n";
+                        echo "update local id for hub_id " . $xfields['hub_id'] . "\n";
+                    }
+                } else {
+                    echo "hub_id not isset for dle_post #" . $post->getId() .  "\n";
                 }
             }
 

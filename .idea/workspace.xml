@@ -15,35 +15,35 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LitresUpdateDleCommand.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LitresUpdateDleCommand.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Command/LitresUpdateDleCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="283" column="0" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+            <state relative-caret-position="161">
+              <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
               <folding>
                 <element signature="e#31#56#0#PHP" expanded="true" />
-                <element signature="e#6904#7510#0#PHP" expanded="false" />
-                <element signature="e#7603#7947#0#PHP" expanded="false" />
-                <element signature="e#8964#10226#0#PHP" expanded="false" />
-                <element signature="e#10232#10598#0#PHP" expanded="false" />
-                <marker date="1545775780026" expanded="false" signature="3054:3072" ph="..." />
-                <marker date="1545775780026" expanded="false" signature="3366:3384" ph="..." />
-                <marker date="1545775780026" expanded="true" signature="3385:3480" ph="..." />
-                <marker date="1545775780026" expanded="true" signature="3385:3611" ph="..." />
-                <marker date="1545775780026" expanded="true" signature="3385:3742" ph="..." />
-                <marker date="1545775780026" expanded="true" signature="3385:3947" ph="..." />
-                <marker date="1545775780026" expanded="true" signature="4005:4023" ph="..." />
-                <marker date="1545775780026" expanded="true" signature="4317:4335" ph="..." />
+                <element signature="e#6969#7575#0#PHP" expanded="false" />
+                <element signature="e#7668#8012#0#PHP" expanded="false" />
+                <element signature="e#9029#10291#0#PHP" expanded="false" />
+                <element signature="e#10297#10663#0#PHP" expanded="false" />
+                <marker date="1546282398211" expanded="false" signature="3119:3137" ph="..." />
+                <marker date="1546282398211" expanded="false" signature="3431:3449" ph="..." />
+                <marker date="1546282398211" expanded="true" signature="3450:3545" ph="..." />
+                <marker date="1546282398211" expanded="true" signature="3450:3676" ph="..." />
+                <marker date="1546282398211" expanded="true" signature="3450:3807" ph="..." />
+                <marker date="1546282398211" expanded="true" signature="3450:4012" ph="..." />
+                <marker date="1546282398211" expanded="true" signature="4070:4088" ph="..." />
+                <marker date="1546282398211" expanded="true" signature="4382:4400" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LitresCheckBookInDleCommand.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LitresCheckBookInDleCommand.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Command/LitresCheckBookInDleCommand.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="98" column="72" lean-forward="false" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
+            <state relative-caret-position="18">
+              <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
               <folding>
                 <element signature="e#31#54#0#PHP" expanded="true" />
               </folding>
@@ -166,11 +166,11 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Entity/LitresJsonData.php" />
         <option value="$PROJECT_DIR$/src/Utils/Log.php" />
-        <option value="$PROJECT_DIR$/src/Command/LitresUpdateDleCommand.php" />
         <option value="$PROJECT_DIR$/src/Command/LitresImportCommand.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/check_book.pid" />
         <option value="$PROJECT_DIR$/src/Command/LitresCheckBookInDleCommand.php" />
+        <option value="$PROJECT_DIR$/src/Command/LitresUpdateDleCommand.php" />
       </list>
     </option>
   </component>
@@ -243,7 +243,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
+              <option name="myItemId" value="Command" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -337,12 +337,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545566137878</updated>
-      <workItem from="1545566140421" duration="46630000" />
+      <workItem from="1545566140421" duration="49952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46630000" />
+    <option name="totallyTimeSpent" value="49952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="25" width="1327" height="743" extended-state="6" />
@@ -666,34 +666,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/LitresUpdateDleCommand.php">
+    <entry file="file://$PROJECT_DIR$/src/Command/LitresCheckBookInDleCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="283" column="0" lean-forward="true" selection-start-line="283" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+        <state relative-caret-position="18">
+          <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
           <folding>
-            <element signature="e#31#56#0#PHP" expanded="true" />
-            <element signature="e#6904#7510#0#PHP" expanded="false" />
-            <element signature="e#7603#7947#0#PHP" expanded="false" />
-            <element signature="e#8964#10226#0#PHP" expanded="false" />
-            <element signature="e#10232#10598#0#PHP" expanded="false" />
-            <marker date="1545775780026" expanded="false" signature="3054:3072" ph="..." />
-            <marker date="1545775780026" expanded="false" signature="3366:3384" ph="..." />
-            <marker date="1545775780026" expanded="true" signature="3385:3480" ph="..." />
-            <marker date="1545775780026" expanded="true" signature="3385:3611" ph="..." />
-            <marker date="1545775780026" expanded="true" signature="3385:3742" ph="..." />
-            <marker date="1545775780026" expanded="true" signature="3385:3947" ph="..." />
-            <marker date="1545775780026" expanded="true" signature="4005:4023" ph="..." />
-            <marker date="1545775780026" expanded="true" signature="4317:4335" ph="..." />
+            <element signature="e#31#54#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Command/LitresCheckBookInDleCommand.php">
+    <entry file="file://$PROJECT_DIR$/src/Command/LitresUpdateDleCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="98" column="72" lean-forward="false" selection-start-line="98" selection-start-column="72" selection-end-line="98" selection-end-column="72" />
+        <state relative-caret-position="161">
+          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
           <folding>
-            <element signature="e#31#54#0#PHP" expanded="true" />
+            <element signature="e#31#56#0#PHP" expanded="true" />
+            <element signature="e#6969#7575#0#PHP" expanded="false" />
+            <element signature="e#7668#8012#0#PHP" expanded="false" />
+            <element signature="e#9029#10291#0#PHP" expanded="false" />
+            <element signature="e#10297#10663#0#PHP" expanded="false" />
+            <marker date="1546282398211" expanded="false" signature="3119:3137" ph="..." />
+            <marker date="1546282398211" expanded="false" signature="3431:3449" ph="..." />
+            <marker date="1546282398211" expanded="true" signature="3450:3545" ph="..." />
+            <marker date="1546282398211" expanded="true" signature="3450:3676" ph="..." />
+            <marker date="1546282398211" expanded="true" signature="3450:3807" ph="..." />
+            <marker date="1546282398211" expanded="true" signature="3450:4012" ph="..." />
+            <marker date="1546282398211" expanded="true" signature="4070:4088" ph="..." />
+            <marker date="1546282398211" expanded="true" signature="4382:4400" ph="..." />
           </folding>
         </state>
       </provider>

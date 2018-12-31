@@ -64,9 +64,11 @@ class LitresUpdateDleCommand extends Command
 //        }
         $criteria = new Criteria();
         $criteria->orWhere($criteria->expr()->eq('local_id', 0))
-                 ->orWhere($criteria->expr()->eq('need_local_update', true));
+                 ->orWhere($criteria->expr()->eq('need_local_update', true))
+                 ->setMaxResults(100);
 
-        $books = $this->em->getRepository(LitresJsonData::class)->matching($criteria);
+        $books = $this->em->getRepository(LitresJsonData::class)
+                            ->matching($criteria);
         $log = new Log();
 
         foreach ($books as $book) {

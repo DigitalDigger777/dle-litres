@@ -85,6 +85,7 @@ class LitresUpdateDleCommand extends Command
 
             $book_title = $data['book-title']['@attributes']['title'];
             print_r($book_title);
+            print_r($mainAuthor);
             exit;
             $title = stripslashes(trim($mainAuthor['first-name'] . ' ' . $mainAuthor['last-name']) . ' - ' . $book_title);
 

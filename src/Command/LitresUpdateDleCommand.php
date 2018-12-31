@@ -97,7 +97,7 @@ class LitresUpdateDleCommand extends Command
             $full_story = '<div style="text-align:center;"><!--dle_image_begin:http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '|--><img src="http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '" alt="Джейн Фэллон - Дважды два - четыре" title="' . $title . '" /><!--dle_image_end--></div><br />
 			<div style="text-align:center;">' . nl2br(mb_substr($this->getAnnotation($data), 0, 400)) . '<br /><br />
 			<b>Название:</b> ' . trim($book_title) . '<br />
-			<b>Автор:</b> ' . trim($mainAuthor['first-name'] . ' ' . $mainAuthor['last-name']) . '<br />
+			<b>Автор:</b> ' . trim($firstName . ' ' . $lastName) . '<br />
 			' . ($data['@attributes']['publisher'] != '' ? '<b>Издательство:</b> ' . $data['@attributes']['publisher'] . '<br />' : '') . '
 			' . (isset($data['publish-info']) && $data['publish-info']['year'] > 0 ? '<b>Год:</b> ' . $data['publish-info']['year'] . '<br />' : '') . '
 			<b>Формат:</b> RTF/FB2<br />

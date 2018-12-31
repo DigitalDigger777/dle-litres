@@ -139,7 +139,7 @@ class LitresCheckBookInDleCommand extends Command
         $xfields_array = explode('||',$data);
         foreach ($xfields_array as $xfield){
             $xfield_array = explode('|',$xfield);
-            $xfields[$xfield_array[0]] = $xfield_array[1];
+            $xfields[$xfield_array[0]] = isset($xfield_array[1]) ? $xfield_array[1] : '';
         }
         return is_array($xfields) ? $xfields : false;
     }

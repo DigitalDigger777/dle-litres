@@ -125,7 +125,7 @@ class LitresUpdateDleCommand extends Command
             if (!$book->getNeedLocalUpdate()) {
                 $dlePost = new DlePost();
                 $dlePost->setDate(new \DateTime());
-                $log->write('Create new dle post');
+                //$log->write('Create new dle post');
             } else {
                 $local_id = $book->getLocalId();
                 $dlePost = $this->em->getRepository(DlePost::class)->find($local_id);
@@ -133,11 +133,11 @@ class LitresUpdateDleCommand extends Command
                 if (!$dlePost) {
                     $dlePost = new DlePost();
                     $dlePost->setDate(new \DateTime());
-                    $log->write('Create new dle post');
+                    //$log->write('Create new dle post');
                 }
                 $book->setNeedLocalUpdate(false);
                 $this->em->persist($book);
-                $log->write('Update dle post id: ' . $local_id);
+                //$log->write('Update dle post id: ' . $local_id);
             }
 
             $dlePost->setAutor('litres');

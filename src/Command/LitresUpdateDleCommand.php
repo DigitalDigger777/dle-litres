@@ -174,6 +174,7 @@ class LitresUpdateDleCommand extends Command
                 $this->em->persist($dleImages);
                 $this->em->flush();
             } catch (\Exception $e) {
+                print $e->getMessage();
                 $local_id = -1;
             }
             $book->setLocalId($local_id);

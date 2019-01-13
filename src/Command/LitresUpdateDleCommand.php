@@ -231,7 +231,7 @@ class LitresUpdateDleCommand extends Command
                     return $data['title-info']['annotation']['p'][0]['emphasis'];
                 }
 
-                return $data['title-info']['annotation']['p'][0];
+                return $data['title-info']['annotation']['p'];
             } elseif (isset($data['title-info']['annotation']['p'])) {
 
                 if (isset($data['title-info']['annotation']['p']['emphasis'])) {

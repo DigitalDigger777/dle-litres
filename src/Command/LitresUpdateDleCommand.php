@@ -186,7 +186,10 @@ class LitresUpdateDleCommand extends Command
 
 
             } catch (ORMException $e) {
-                $this->em->getConnection()->connect();
+                $this->em = $this->em->create(
+                    $this->em->getConnection(),
+                    $this->em->getConfiguration()
+                );
                 $book->setLocalId($local_id);
                 $this->em->persist($book);
                 $this->em->flush();

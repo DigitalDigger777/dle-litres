@@ -122,57 +122,60 @@ class LitresUpdateDleCommand extends Command
 
             $xfields_str = $this->implode_xfields($xfields);
 
-            if (!$book->getNeedLocalUpdate()) {
-                $dlePost = new DlePost();
-                $dlePost->setDate(new \DateTime());
-                //$log->write('Create new dle post');
-            } else {
-                $local_id = $book->getLocalId();
-                $dlePost = $this->em->getRepository(DlePost::class)->find($local_id);
-
-                if (!$dlePost) {
+            try {
+                if (!$book->getNeedLocalUpdate()) {
                     $dlePost = new DlePost();
                     $dlePost->setDate(new \DateTime());
                     //$log->write('Create new dle post');
+                } else {
+                    $local_id = $book->getLocalId();
+                    $dlePost = $this->em->getRepository(DlePost::class)->find($local_id);
+
+                    if (!$dlePost) {
+                        $dlePost = new DlePost();
+                        $dlePost->setDate(new \DateTime());
+                        //$log->write('Create new dle post');
+                    }
+                    $book->setNeedLocalUpdate(false);
+                    $this->em->persist($book);
+                    //$log->write('Update dle post id: ' . $local_id);
                 }
-                $book->setNeedLocalUpdate(false);
-                $this->em->persist($book);
-                //$log->write('Update dle post id: ' . $local_id);
+
+                $dlePost->setAutor('litres');
+                $dlePost->setShortStory($short_story);
+                $dlePost->setFullStory($full_story);
+                $dlePost->setXfields($xfields_str);
+                $dlePost->setTitle($title);
+                $dlePost->setDescr('');
+                $dlePost->setKeywords('');
+                $dlePost->setCategory($local_categories);
+                $dlePost->setAltName($alt_name);
+                $dlePost->setCommNum(0);
+                $dlePost->setAllowComm(1);
+                $dlePost->setAllowMain(0);
+                $dlePost->setApprove(1);
+                $dlePost->setFixed(0);
+                $dlePost->setAllowBr(1);
+                $dlePost->setSymbol('');
+                $dlePost->setTags('');
+                $dlePost->setMetatitle($title);
+
+                $this->em->persist($dlePost);
+                $this->em->flush();
+
+                $local_id = $dlePost->getId();
+
+                $dleImages = new DleImages();
+                $dleImages->setImages($dir_name . '/' . $pic_name);
+                $dleImages->setNewsId($local_id);
+                $dleImages->setAuthor('litres');
+                $dleImages->setDate(time());
+
+                $this->em->persist($dleImages);
+                $this->em->flush();
+            } catch (\Exception $e) {
+                $local_id = -1;
             }
-
-            $dlePost->setAutor('litres');
-            $dlePost->setShortStory($short_story);
-            $dlePost->setFullStory($full_story);
-            $dlePost->setXfields($xfields_str);
-            $dlePost->setTitle($title);
-            $dlePost->setDescr('');
-            $dlePost->setKeywords('');
-            $dlePost->setCategory($local_categories);
-            $dlePost->setAltName($alt_name);
-            $dlePost->setCommNum(0);
-            $dlePost->setAllowComm(1);
-            $dlePost->setAllowMain(0);
-            $dlePost->setApprove(1);
-            $dlePost->setFixed(0);
-            $dlePost->setAllowBr(1);
-            $dlePost->setSymbol('');
-            $dlePost->setTags('');
-            $dlePost->setMetatitle($title);
-
-            $this->em->persist($dlePost);
-            $this->em->flush();
-
-            $local_id = $dlePost->getId();
-
-            $dleImages = new DleImages();
-            $dleImages->setImages($dir_name . '/' . $pic_name);
-            $dleImages->setNewsId($local_id);
-            $dleImages->setAuthor('litres');
-            $dleImages->setDate(time());
-
-            $this->em->persist($dleImages);
-            $this->em->flush();
-
             $book->setLocalId($local_id);
             $this->em->persist($book);
             $this->em->flush();
@@ -236,7 +239,7 @@ class LitresUpdateDleCommand extends Command
                     if (isset($data['title-info']['annotation']['p']['emphasis'][0])) {
                         return $data['title-info']['annotation']['p']['emphasis'][0];
                     }
-                    
+
                     return $data['title-info']['annotation']['p']['emphasis'];
 
                 } elseif (isset($data['title-info']['annotation']['p'][0])) {

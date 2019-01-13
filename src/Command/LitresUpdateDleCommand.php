@@ -10,6 +10,7 @@ use App\Utils\Picture;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\ORMException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -177,11 +178,24 @@ class LitresUpdateDleCommand extends Command
                 print $e->getMessage();
                 $local_id = -1;
             }
-            $book->setLocalId($local_id);
-            $this->em->persist($book);
-            $this->em->flush();
 
-            $this->makeCover($data, $dir_name, $pic_name);
+            try {
+                $book->setLocalId($local_id);
+                $this->em->persist($book);
+                $this->em->flush();
+
+
+            } catch (ORMException $e) {
+                $this->em = $this->getDoctrine()->resetManager();
+                $book->setLocalId($local_id);
+                $this->em->persist($book);
+                $this->em->flush();
+
+            }
+
+            if ($local_id != -1) {
+                $this->makeCover($data, $dir_name, $pic_name);
+            }
         }
 
         $io->success('You have a new command! Now make it your own! Pass --help to see your options.');

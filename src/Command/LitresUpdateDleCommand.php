@@ -143,9 +143,9 @@ class LitresUpdateDleCommand extends Command
                 }
 
                 $dlePost->setAutor('litres');
-                $dlePost->setShortStory($short_story);
+                $dlePost->setShortStory(mb_convert_encoding($short_story, 'UTF-8'));
                 $dlePost->setFullStory($full_story);
-                $dlePost->setXfields($xfields_str);
+                $dlePost->setXfields(mb_convert_encoding($xfields_str, 'UTF-8'));
                 $dlePost->setTitle($title);
                 $dlePost->setDescr('');
                 $dlePost->setKeywords('');

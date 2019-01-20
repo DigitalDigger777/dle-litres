@@ -179,22 +179,25 @@ class LitresUpdateDleCommand extends Command
                 $local_id = -1;
             }
 
-            try {
-                $book->setLocalId($local_id);
-                $this->em->persist($book);
-                $this->em->flush();
-
-
-            } catch (ORMException $e) {
-                $this->em = $this->em->create(
-                    $this->em->getConnection(),
-                    $this->em->getConfiguration()
-                );
-                $book->setLocalId($local_id);
-                $this->em->persist($book);
-                $this->em->flush();
-
-            }
+            $book->setLocalId($local_id);
+            $this->em->persist($book);
+            $this->em->flush();
+//            try {
+//                $book->setLocalId($local_id);
+//                $this->em->persist($book);
+//                $this->em->flush();
+//
+//
+//            } catch (ORMException $e) {
+//                $this->em = $this->em->create(
+//                    $this->em->getConnection(),
+//                    $this->em->getConfiguration()
+//                );
+//                $book->setLocalId($local_id);
+//                $this->em->persist($book);
+//                $this->em->flush();
+//
+//            }
 
             if ($local_id != -1) {
                 $this->makeCover($data, $dir_name, $pic_name);

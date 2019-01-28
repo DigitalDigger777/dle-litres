@@ -163,6 +163,10 @@ class LitresUpdateDleCommand extends Command
 
                     $this->em->persist($dleImages);
                     $this->em->flush();
+
+                    $book->setLocalId($local_id);
+                    $this->em->persist($book);
+                    $this->em->flush();
                 }
 
                 if ($book->getNeedLocalUpdate()) {
@@ -215,9 +219,7 @@ class LitresUpdateDleCommand extends Command
                 $local_id = -1;
             }
 
-            $book->setLocalId($local_id);
-            $this->em->persist($book);
-            $this->em->flush();
+
 //            try {
 //                $book->setLocalId($local_id);
 //                $this->em->persist($book);

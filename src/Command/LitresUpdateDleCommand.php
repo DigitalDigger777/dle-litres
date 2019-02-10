@@ -95,8 +95,9 @@ class LitresUpdateDleCommand extends Command
             $dir_name = date("Y-m");
             $pic_name = time() . "_" . $data['@attributes']['id'] . '.jpg';
             $annotationObj = $this->getAnnotation($data);
+            echo "===annotation===\n";
             print_r($annotationObj);
-            echo '===annotation===';
+            echo "===annotation===\n";
             $annotation = is_array($annotationObj) ? $annotationObj['strong'] : $annotationObj;
 
 

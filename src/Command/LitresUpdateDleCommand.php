@@ -109,7 +109,7 @@ class LitresUpdateDleCommand extends Command
 
 
             $short_story = '<div style="text-align:center;"><!--dle_image_begin:http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '|--><img src="http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '" alt="Джейн Фэллон - Дважды два - четыре" title="' . $title . '" /><!--dle_image_end--></div><br />
-			<div style="text-align:center;">' . nl2br(mb_substr($this->getAnnotation($data), 0, 200)) . '</div>';
+			<div style="text-align:center;">' . nl2br(mb_substr($annotation, 0, 200)) . '</div>';
 
             $xfields = [];
 

@@ -95,10 +95,20 @@ class LitresUpdateDleCommand extends Command
             $dir_name = date("Y-m");
             $pic_name = time() . "_" . $data['@attributes']['id'] . '.jpg';
             $annotationObj = $this->getAnnotation($data);
-            echo "===annotation===\n";
-            print_r($annotationObj);
-            echo "===annotation===\n";
-            $annotation = is_array($annotationObj) ? $annotationObj['strong'] : $annotationObj;
+
+            if (is_array($annotationObj)) {
+                if (isset($annotationObj['strong'])) {
+                    $annotation = $annotationObj['strong'];
+                } elseif (isset($annotationObj['style'])) {
+                    $annotation = $annotationObj['style'];
+                } else {
+                    print_r($annotationObj);
+                    throw new  Exception('Annotation have array but not have "strong" and "style" items');
+                }
+            } else {
+                $annotation = $annotationObj;
+            }
+
 
 
             $full_story = '<div style="text-align:center;"><!--dle_image_begin:http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '|--><img src="http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '" alt="Джейн Фэллон - Дважды два - четыре" title="' . $title . '" /><!--dle_image_end--></div><br />

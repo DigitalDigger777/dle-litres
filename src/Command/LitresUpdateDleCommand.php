@@ -94,12 +94,11 @@ class LitresUpdateDleCommand extends Command
 
             $dir_name = date("Y-m");
             $pic_name = time() . "_" . $data['@attributes']['id'] . '.jpg';
-            $annotation = $this->getAnnotation($data);
-            echo '===annotation';
-            print_r($annotation);
-            echo '===annotation';
+            $annotationObj = $this->getAnnotation($data);
+            $annotation = is_array($annotationObj) ? $annotationObj['strong'] : $annotationObj;
+
             $full_story = '<div style="text-align:center;"><!--dle_image_begin:http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '|--><img src="http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '" alt="Джейн Фэллон - Дважды два - четыре" title="' . $title . '" /><!--dle_image_end--></div><br />
-			<div style="text-align:center;">' . nl2br(mb_substr($this->getAnnotation($data), 0, 400)) . '<br /><br />
+			<div style="text-align:center;">' . nl2br(mb_substr($annotation, 0, 400)) . '<br /><br />
 			<b>Название:</b> ' . trim($book_title) . '<br />
 			<b>Автор:</b> ' . trim($firstName . ' ' . $lastName) . '<br />
 			' . ($data['@attributes']['publisher'] != '' ? '<b>Издательство:</b> ' . $data['@attributes']['publisher'] . '<br />' : '') . '

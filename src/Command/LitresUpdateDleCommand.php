@@ -131,8 +131,11 @@ class LitresUpdateDleCommand extends Command
                 } elseif (isset($annotationObj['emphasis'])) {
                     $annotation = $annotationObj['emphasis'];
                 } else {
+                    echo "==annotation==\n";
                     print_r($annotationObj);
-                    throw new  \Exception('Annotation have array but not have "strong" and "style" items');
+                    echo "==annotation==\n";
+                    $annotation = '';
+                    //throw new  \Exception('Annotation have array but not have "strong" and "style" items');
                 }
             } else {
                 $annotation = $annotationObj;

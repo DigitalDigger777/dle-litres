@@ -101,7 +101,7 @@ class LitresUpdateDleCommand extends Command
                     $annotation = $annotationObj['strong'];
                 } elseif (isset($annotationObj['style'])) {
                     $annotation = $annotationObj['style'];
-                } elseif ($annotationObj['emphasis']) {
+                } elseif (isset($annotationObj['emphasis'])) {
                     $annotation = $annotationObj['emphasis'];
                 } else {
                     print_r($annotationObj);

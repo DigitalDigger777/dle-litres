@@ -288,6 +288,8 @@ class LitresUpdateDleCommand extends Command
                     );
                 }
                 $local_id = -1;
+                echo $book->getId();
+                exit;
                 $book->setNeedLocalUpdate(false);
                 $book->setLocalId($local_id);
                 $this->em->persist($book);

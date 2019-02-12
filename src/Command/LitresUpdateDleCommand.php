@@ -110,7 +110,9 @@ class LitresUpdateDleCommand extends Command
             }
 
             if (is_array($annotation)) {
+                echo "==annotation==\n";
                 print_r($annotation);
+                echo "==annotation==\n";
                 throw new  \Exception('Annotation have array');
             }
 

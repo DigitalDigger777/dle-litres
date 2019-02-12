@@ -179,6 +179,11 @@ class LitresUpdateDleCommand extends Command
 
             try {
                 $local_id = $book->getLocalId();
+
+                if ($local_id == -1) {
+                    continue;
+                }
+
                 $dlePost = $this->em->getRepository(DlePost::class)->find($local_id);
 
                 if (!$dlePost) {
@@ -269,8 +274,19 @@ class LitresUpdateDleCommand extends Command
 
 
             } catch (\Exception $e) {
-                print $e->getMessage();
+                print $e->getMessage() . "\n";
+
+                if (!$this->em->isOpen()) {
+                    $this->em = $this->em->create(
+                        $this->em->getConnection(),
+                        $this->em->getConfiguration()
+                    );
+                }
                 $local_id = -1;
+                $book->setNeedLocalUpdate(false);
+                $book->setLocalId($local_id);
+                $this->em->persist($book);
+                $this->em->flush();
             }
 
 

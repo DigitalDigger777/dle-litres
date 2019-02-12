@@ -106,7 +106,8 @@ class LitresUpdateDleCommand extends Command
                             echo "==annotation==\n";
                             print_r($annotationObj);
                             echo "==annotation==\n";
-                            throw new  \Exception('Annotation have array');
+                            $annotation = '';
+                            //throw new  \Exception('Annotation have array');
                         }
                     } else {
                         $annotation = $annotationObj['strong'];
@@ -120,7 +121,8 @@ class LitresUpdateDleCommand extends Command
                             echo "==annotation==\n";
                             print_r($annotationObj);
                             echo "==annotation==\n";
-                            throw new  \Exception('Annotation have array');
+                            $annotation = '';
+                            //throw new  \Exception('Annotation have array');
                         }
                     } else {
                         $annotation = $annotationObj['style'];

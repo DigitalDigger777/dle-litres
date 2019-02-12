@@ -109,6 +109,10 @@ class LitresUpdateDleCommand extends Command
                 $annotation = $annotationObj;
             }
 
+            if (is_array($annotation)) {
+                print_r($annotation);
+                throw new  Exception('Annotation have array');
+            }
 
 
             $full_story = '<div style="text-align:center;"><!--dle_image_begin:http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '|--><img src="http://www.vipbook.su/uploads/posts/' . $dir_name . '/' . $pic_name . '" alt="Джейн Фэллон - Дважды два - четыре" title="' . $title . '" /><!--dle_image_end--></div><br />

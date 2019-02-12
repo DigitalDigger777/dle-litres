@@ -100,7 +100,20 @@ class LitresUpdateDleCommand extends Command
                 if (isset($annotationObj['strong'])) {
                     $annotation = $annotationObj['strong'];
                 } elseif (isset($annotationObj['style'])) {
-                    $annotation = $annotationObj['style'];
+
+                    if (is_array($annotationObj['style'])) {
+                        if (isset($annotationObj['style']['emphasis'])) {
+                            $annotation = $annotationObj['style']['emphasis'];
+                        } else {
+                            echo "==annotation==\n";
+                            print_r($annotationObj);
+                            echo "==annotation==\n";
+                            throw new  \Exception('Annotation have array');
+                        }
+                    } else {
+                        $annotation = $annotationObj['style'];
+                    }
+
                 } elseif (isset($annotationObj['emphasis'])) {
                     $annotation = $annotationObj['emphasis'];
                 } else {

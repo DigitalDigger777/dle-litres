@@ -103,7 +103,7 @@ class LitresUpdateDleCommand extends Command
                     $annotation = $annotationObj['style'];
                 } else {
                     print_r($annotationObj);
-                    throw new  Exception('Annotation have array but not have "strong" and "style" items');
+                    throw new  \Exception('Annotation have array but not have "strong" and "style" items');
                 }
             } else {
                 $annotation = $annotationObj;
@@ -111,7 +111,7 @@ class LitresUpdateDleCommand extends Command
 
             if (is_array($annotation)) {
                 print_r($annotation);
-                throw new  Exception('Annotation have array');
+                throw new  \Exception('Annotation have array');
             }
 
 

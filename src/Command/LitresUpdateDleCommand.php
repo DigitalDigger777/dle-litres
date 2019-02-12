@@ -101,6 +101,8 @@ class LitresUpdateDleCommand extends Command
                     $annotation = $annotationObj['strong'];
                 } elseif (isset($annotationObj['style'])) {
                     $annotation = $annotationObj['style'];
+                } elseif ($annotationObj['emphasis']) {
+                    $annotation = $annotationObj['emphasis'];
                 } else {
                     print_r($annotationObj);
                     throw new  \Exception('Annotation have array but not have "strong" and "style" items');
